@@ -6,13 +6,22 @@ const Hearder = (props) => {
   );
 };
 
-
-
 const Content = (props) => {
-  return <>{props.exercice}</>;
+  return (
+    <>
+      <p>
+        {props.part} :{props.exercises}
+      </p>
+    </>
+  );
 };
-const Total = (props) => {
-  return <>{props.part}</>;
+const Total = ({ a, b, c }) => {
+  const total = a + b + c;
+  return (
+    <>
+      <p>Number of exercises {total}</p>
+    </>
+  );
 };
 
 const App = () => {
@@ -27,15 +36,11 @@ const App = () => {
   return (
     <div>
       <Hearder course={course} />
-      <p>
-        <Total part={part1} /> <Content exercice={exercises1} />
-      </p>
-      <p>
-        <Total part={part2} /> <Content exercice={exercises2} />
-      </p>
-      <p>
-        <Total part={part3} /> <Content exercice={exercises3} />
-      </p>
+      <Content part={part1} exercises={exercises1} />
+      <Content part={part2} exercises={exercises2} />
+      <Content part={part3} exercises={exercises3} />
+      {console.log()}
+      <Total a={exercises1} b={exercises2} c={exercises3} />
     </div>
   );
 };
