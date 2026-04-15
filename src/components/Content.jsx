@@ -1,14 +1,14 @@
 import React from "react";
 import Part from "./Part";
-
+import Total from "./Total";
 const Content = ({ parts }) => {
+  const total = parts[0].exercices + parts[1].exercices + parts[2].exercices;
   return (
     <div>
-      <ul>
-        {parts.map((part) => (
-          <Part key={part.id} name={part.name} exercises={part.exercices} />
-        ))}
-      </ul>
+      {parts.map((part) => (
+        <Part key={part.id} name={part.name} exercises={part.exercices} />
+      ))}
+      <Total exercices={total} />
     </div>
   );
 };

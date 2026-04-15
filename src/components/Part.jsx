@@ -2,9 +2,9 @@ import React from "react";
 
 const Part = ({ exercises, name }) => {
   return (
-    <li>
+    <p>
       {name}: {exercises}
-    </li>
+    </p>
   );
 };
 export default Part;
